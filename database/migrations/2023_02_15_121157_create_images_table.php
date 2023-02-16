@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->longText('image_url');
             $table->boolean('isCover');
-            $table->integer('product_id')->nullable();
+            $table->foreignId('product_id')->nullable()->constrained();
             $table->timestamps();
         });
     }
