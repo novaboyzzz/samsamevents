@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\DashboardConrtoller;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+route::get('/admin',[DashboardConrtoller::class,'index']);
