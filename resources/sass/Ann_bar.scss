@@ -1,0 +1,19 @@
+@import 'Schemes';
+
+.ann_bar{
+    //shaping and positioning
+    padding: 7px 0;
+    //colors
+    background-color: $yellow-color-main;
+    //text
+    &__content{
+        //shaping and positioning
+        margin: 0;
+        //colors
+        font-family: $announcement_bar-font;
+        color: black;
+        font-size: .8em;
+        //text
+        text-align: center;
+    }
+}
