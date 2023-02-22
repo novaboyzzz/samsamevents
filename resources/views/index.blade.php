@@ -10,7 +10,7 @@
             
         </div>    
             <!---------------------------------------- script ------------------------------------------>
-            @vite('resources/js/index.jsx')
+            @vite('resources/js/homepage.jsx')
     </body>
 </html>
  

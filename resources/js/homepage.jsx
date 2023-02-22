@@ -16,7 +16,6 @@ function App() {
         </>
     );
 }
-export default App;
 
 //load function
 window.onload = function() {
