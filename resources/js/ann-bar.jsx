@@ -15,7 +15,7 @@ function Ann_bar() {
                 myRef.current.style.height = '0';
                 myRef.current.style.padding = '0';
             }else{
-                myRef.current.style.height = '1rem';
+                myRef.current.style.height = '1.3rem';
                 myRef.current.style.padding = '.7rem 0';
             }
         };

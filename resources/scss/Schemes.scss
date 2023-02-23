@@ -4,9 +4,10 @@
 //text
 
 //fonts
+
 @font-face {
+    src: url('/public/fonts/Phenomena-Regular.ttf');
     font-family: 'basic-font';
-    src: url('/public/fonts/Pro-Semilight-trial.ttf');
 }
 $basic-font: 'basic-font';
 
