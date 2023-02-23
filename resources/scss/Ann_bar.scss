@@ -3,6 +3,8 @@
 .ann_bar{
     //shaping and positioning
     padding: .7rem 0;
+    overflow: hidden;
+    transition: .3s;
     position: fixed;
     width: 100%;
     z-index: 5;
