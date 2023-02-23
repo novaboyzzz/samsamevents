@@ -3,20 +3,21 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 //component import
-import Ann_bar from './ann-bar';
+import Ann_bar from './Ann-bar';
+import Nav_bar from './Nav-bar';
 
 //scss import
-import "../sass/index.scss";
+import "../scss/index.scss";
 
 //create function
 function App() {
     return (
         <>
             <Ann_bar />
+            <Nav_bar />
         </>
     );
 }
-export default App;
 
 //load function
 window.onload = function() {
