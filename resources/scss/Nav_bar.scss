@@ -39,15 +39,25 @@
             //layout
 
             //text
-            font-size: 1vw;
-
+            font-size: 1.2vw;
+            
+            h3{
+                //shaping and positioning
+                
+                //layout
+                
+                //text
+                transform: translateY(-10%);
+            }
+            
             a{
                 //shaping and positioning
-
+                
                 //layout
                 color: $blue-color-dark;
-
+                
                 //text
+                transform: translateY(-150%);
                 text-decoration: none;
             }
 
