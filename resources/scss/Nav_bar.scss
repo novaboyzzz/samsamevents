@@ -1,0 +1,173 @@
+@import 'Schemes';
+
+.nav-bar{
+    //shaping and positioning
+    position: fixed;
+    padding: 1rem 0;
+    display: flex;
+    width: 100%;
+    top: 2.4rem;
+    z-index: 4;
+    right: 0;
+    left: 0;
+    
+    //layout
+    box-shadow: rgba(0, 0, 0, 0.25) 0 0 2px 2px;
+    background-color: $blue-color-main;
+    transition: .1s;
+
+    //text
+    font-family: $basic-font;
+
+    &__list{
+        //shaping and positioning
+        list-style: none;
+        position: absolute;
+
+        //layout
+        color: $blue-color-dark;
+
+        //text
+
+        &__item{
+            //shaping and positioning
+            float: left;
+            margin-left: 7vw;
+            display: flex;
+            align-items: center;
+
+            //layout
+
+            //text
+            font-size: 1vw;
+
+            a{
+                //shaping and positioning
+
+                //layout
+                color: $blue-color-dark;
+
+                //text
+                text-decoration: none;
+            }
+
+            .arrow{
+                //shaping and positioning
+                transform: rotateX(0deg);
+
+                //layout
+                transition: .5s;
+
+                //text
+            }
+
+            .dropDown{
+                //shaping and positioning
+                transform: translateY(70%);
+                position: absolute;
+                padding: 0 3rem 0 1rem;
+                
+                //layout
+                background-color: $blue-color-main;
+                display: none;
+
+
+                //text
+
+                &__item{
+                    a{
+                        //shaping and positioning
+        
+                        //layout
+                        color: $blue-color-dark;
+        
+                        //text
+                        text-decoration: none;
+                    }
+                }
+
+                &__item::after{
+                    //shaping and positioning
+                    position: absolute;
+                    height: .2vw;
+                    transform: translateY(-500%);
+                    width: 0%;
+
+                    //layout
+                    background-color: $blue-color-dark;
+                    transition: .5s;
+
+                    //text
+                    content: '';
+                }
+                
+                &__item:hover::after{
+                    //shaping and positioning
+                    width: 3vw;
+
+                    //layout
+                    transition: .5s;
+                    
+                    //text
+                }
+            }
+        }
+        
+        &__item:hover{
+            .arrow{
+                //shaping and positioning
+                transform: rotateX(180deg);
+                transition: .5s;
+
+                //layout
+
+                //text
+            }
+
+            .dropDown{
+                //shaping and positioning
+                
+                //layout
+                display: block;
+
+                //text
+            }
+        }
+
+        &__item::after{
+            //shaping and positioning
+            position: absolute;
+            height: .2vw;
+            bottom: 1vw; 
+            width: 0%;
+
+            //layout
+            background-color: $blue-color-dark;
+            transition: .5s;
+
+            //text
+            content: '';
+        }
+        
+        &__item:hover::after{
+            //shaping and positioning
+            width: 3vw;
+
+            //layout
+            transition: .5s;
+            
+            //text
+        }
+    }
+
+    &__logo{
+        //shaping and positioning
+        position: relative;
+        margin: 0 auto;
+        height: 80px;
+
+        //layout
+
+        //text
+    }
+}
