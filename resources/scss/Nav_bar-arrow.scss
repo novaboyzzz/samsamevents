@@ -1,0 +1,13 @@
+@import 'Schemes';
+
+.triangle{
+//shaping and positioning
+height: .9rem;
+width: .9rem;
+
+//layout
+clip-path: polygon(50% 0, 100% 100%, 0 100%);
+background-color: $blue-color-dark;
+
+//text
+}

@@ -1,8 +1,14 @@
 @import 'Schemes';
 
 body{
-    //colors
+//shaping and positioning
+margin: 0;
+}
+
+:root{
+    //layout
     background-color: $pink-color-light;
+    height: 4000px;
     
     //shaping and positioning
     margin: 0;

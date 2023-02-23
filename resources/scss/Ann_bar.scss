@@ -2,9 +2,12 @@
 
 .ann_bar{
     //shaping and positioning
-    padding: 7px 0;
+    padding: .7rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
 
-    //colors
+    //layout
     background-color: $yellow-color-main;
 
     //text
@@ -13,10 +16,10 @@
         //shaping and positioning
         margin: 0;
 
-        //colors
-        font-family: $announcement_bar-font;
+        //layout
+        font-family: $basic-font;
         color: black;
-        font-size: .8em;
+        font-size: .8rem;
         
         //text
         text-align: center;

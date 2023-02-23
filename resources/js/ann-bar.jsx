@@ -1,5 +1,5 @@
 import React from 'react';
-import '../sass/Ann_bar.scss';
+import '../scss/Ann_bar.scss';
 
 function Ann_bar() {
     return (

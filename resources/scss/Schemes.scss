@@ -1,20 +1,21 @@
 
 //shaping and positioning
-//colors
+//layout
 //text
 
 //fonts
-
 @font-face {
-    font-family: 'announcement_bar-font';
+    font-family: 'basic-font';
     src: url('/public/fonts/Pro-Semilight-trial.ttf');
 }
-$announcement_bar-font: 'announcement_bar-font';
+$basic-font: 'basic-font';
 
 //pink colors
-
 $pink-color-light: #F9ECF0;
 
 //yellow colors
-
 $yellow-color-main: #F3CA40;
+
+//blue colors
+$blue-color-main: #32B2E8;
+$blue-color-dark: #006F9E;
