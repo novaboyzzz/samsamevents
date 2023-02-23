@@ -3,8 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 //component import
-import Ann_bar from './Ann-bar';
-import Nav_bar from './Nav-bar';
+import Ann_bar from "./ann-bar";
+import Nav_bar from './nav-bar';
 
 //scss import
 import "../scss/index.scss";

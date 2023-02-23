@@ -1,5 +1,5 @@
 //react import
-import React, { useRef, useEffect, useState } from 'react'; 
+import React, { useRef, useEffect } from 'react';
 
 //scss import
 import '../scss/Nav_bar.scss';
@@ -15,8 +15,7 @@ function Nav_bar() {
     const myRef = useRef();
     useEffect(() => {
         const handleScroll = () => {
-            console.log(window.scrollY);
-            if(window.scrollY > 5){
+            if(window.scrollY > 50){
                     myRef.current.style.top = '0px';
             }else{
                 myRef.current.style.top = '2.4rem';
@@ -29,7 +28,6 @@ function Nav_bar() {
           window.removeEventListener('scroll', handleScroll);
         };
       }, []);
-    
       
     //return the html
     return (
@@ -43,7 +41,7 @@ function Nav_bar() {
                         <div className='arrow'>
                             <NavBarArrow /> 
                         </div>
-                        <div className='dropDown'>
+                        <div className='dropDown'>  
                             <div className='dropDown__item'>
                                 <h3>
                                     <a href=''>
