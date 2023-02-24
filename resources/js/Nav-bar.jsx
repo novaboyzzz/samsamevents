@@ -15,7 +15,7 @@ function Nav_bar() {
     const myRef = useRef();
     useEffect(() => {
         const handleScroll = () => {
-            if(window.scrollY > 5){
+            if(window.scrollY > 50){
                     myRef.current.style.top = '0px';
             }else{
                 myRef.current.style.top = '2.5rem';
