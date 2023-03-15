@@ -1,0 +1,42 @@
+//important imports
+@import "../../node_modules/slick-carousel/slick/slick-theme.scss";
+@import "../../node_modules/slick-carousel/slick/slick.scss";
+@import 'Schemes';
+
+//start scss
+.storefront_wrapper{
+    transform: translateY(9.4rem);
+    width: 100%;
+    .slick-slider{
+        overflow: hidden;
+        .slick-list{
+            .slick-track{
+                .slick-slide{
+                    height: 45vw;
+                    div{
+                        div{
+                            overflow: hidden;
+                            img{
+                                height: 100%;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__inside{
+        transform: translateY(-100%);
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        font-family: $basic-font;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+    }
+}
