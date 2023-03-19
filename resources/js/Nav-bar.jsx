@@ -1,12 +1,12 @@
 //react import
-import React, { useRef, useEffect, useState } from 'react'; 
+import React, { useRef, useEffect } from 'react'; 
 
 //scss import
 import '../scss/Nav_bar.scss';
 
 //component import
 import myImage from '../../public/images/logo.png';
-import NavBarArrow from './Nav_bar-arrow';
+import NavBarArrow from './nav_bar-arrow';
 
 //create function
 function Nav_bar() {
