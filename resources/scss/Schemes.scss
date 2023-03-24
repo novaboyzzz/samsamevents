@@ -4,12 +4,15 @@
 //text
 
 //vw ratio's
-$vw-large-desktop: 1800px;
-$vw-desktop: 1000px;
-$vw-tablet: 600px;
+$small-screen: 576px;
+$medium-screen: 768px;
+$large-screen: 992px;
+$extra-large-screen: 1200px;
+
+//max-width
+$use-max-width: 1200px;
 
 //fonts
-
 @font-face {
     src: url('/public/fonts/Phenomena-Regular.ttf');
     font-family: 'basic-font';
@@ -21,6 +24,9 @@ $pink-color-light: #F9ECF0;
 
 //yellow colors
 $yellow-color-main: #F3CA40;
+
+//red colors
+$red-color-main: #ED1C24;
 
 //blue colors
 $blue-color-main: #32B2E8;

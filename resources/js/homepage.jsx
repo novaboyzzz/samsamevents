@@ -1,11 +1,11 @@
 //react import
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 
 //component import
 import Ann_bar from './ann-bar';
 import Nav_bar from './nav-bar';
 import Storefront from './storefront';
+import Category from './category';
 
 //scss import
 import "../scss/Homepage.scss";
@@ -17,13 +17,9 @@ function App() {
             <Ann_bar />
             <Nav_bar />
             <Storefront />
+            <Category />
         </>
     );
 }
 
-//load function
-document.addEventListener('DOMContentLoaded', function () {
-  const rootElement = document.getElementById('root');
-  const root = ReactDOM.createRoot(rootElement);
-  root.render(<App />);
-});
+export default App;

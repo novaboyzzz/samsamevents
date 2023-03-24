@@ -1,0 +1,171 @@
+//important imports
+@import 'Schemes';
+
+//start scss
+.category_wrapper{
+    //shaping and positioning
+    transform: translateY(9.4rem);
+    max-width: $use-max-width;
+    margin: 7rem auto;
+    //layout
+    padding: 0 5rem;
+    //text
+    &__title_wrapper{
+        //shaping and positioning
+        position: relative;
+        height: auto;
+        //layout
+        //text
+        &__title{
+            height: 2rem;
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            &__left{
+                //shaping and positioning
+                //layout
+                //text
+                font-family: $basic-font;
+                line-height: 2rem;
+                font-size: .8rem;
+                color: black;
+                @media (min-width: $small-screen) {
+                    //shaping and positioning
+                    //layout
+                    //text
+                    font-size: 1rem;
+                }
+                @media (min-width: $medium-screen) {
+                    //shaping and positioning
+                    //layout
+                    //text
+                    font-size: 1.2rem;
+                }
+                @media (min-width: $large-screen) {
+                    //shaping and positioning
+                    //layout
+                    //text
+                    font-size: 1.5rem;
+                }
+            }
+            &__right{
+                //shaping and positioning
+                position: relative;
+                float: right;
+                //layout
+                //text
+                font-family: $basic-font;
+                color: $red-color-main;
+                line-height: 2rem;
+                font-size: .6rem;
+                @media (min-width: $small-screen) {
+                    //shaping and positioning
+                    //layout
+                    //text
+                    font-size: .8rem;
+                }
+                @media (min-width: $medium-screen) {
+                    //shaping and positioning
+                    //layout
+                    //text
+                    font-size: 1rem;
+                }
+                @media (min-width: $large-screen) {
+                    //shaping and positioning
+                    //layout
+                    //text
+                    font-size: 1.2rem;
+                }
+                .arrow{
+                    //shaping and positioning
+                    clip-path: polygon(50% 10%, 62% 1%, 100% 50%, 61% 99%, 50% 90%, 77% 57%, 0 57%, 0 43%, 77% 43%);
+                    width: 1rem;
+                    height: .8rem;
+                    //layout
+                    background-color: $red-color-main;
+                    transition: .6s;
+                    //text
+                    @media (min-width: $medium-screen) {
+                        //shaping and positioning
+                        //layout
+                        //text
+                        width: 1.2rem;
+                        height: 1rem;
+                    }
+                }
+            }
+            &__right:hover{
+                    .arrow{
+                        //shaping and positioning
+                        transform: translateX(20%);
+                        //layout
+                        transition: .4s;
+                        //text
+                    }
+                }
+        }
+    }
+    &__block_grid{
+        //shaping and positioning
+        grid-template-columns: 47.5% 47.5%;
+        position: relative;
+        column-gap: 5%;
+        display: grid;
+        //layout
+        //text
+        @media (min-width: $medium-screen) {
+            //shaping and positioning
+            //layout
+            //text
+            grid-template-columns: 30% 30% 30%;
+        }
+        &__block{
+            &__image{
+                //shaping and positioning
+                //layout
+                overflow: hidden;
+                //text
+                img{
+                    //shaping and positioning
+                    width: 100%;
+                    //layout
+                    filter: brightness(80%);
+                    transition: .5s;
+                    //text
+                }
+            }
+            &__image:hover{
+                img{
+                    //shaping and positioning
+                    //layout
+                    filter: brightness(100%);
+                    transition: .5s;
+                    scale: 1.05;
+                    //text
+                }
+            }
+            &__title{
+                h3{
+                    //shaping and positioning
+                    //layout
+                    transform: translateX(2%);
+                    //text
+                    font-family: $basic-font;
+                    font-size: 1.2rem;
+                    @media (min-width: $medium-screen) {
+                        //shaping and positioning
+                        //layout
+                        //text
+                        font-size: 1.2rem;
+                    }
+                    @media (min-width: $large-screen) {
+                        //shaping and positioning
+                        //layout
+                        //text
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
