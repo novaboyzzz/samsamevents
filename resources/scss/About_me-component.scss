@@ -12,6 +12,7 @@
     padding: 1.4rem;
     width: 80%;
     background-color: $blue-color-main;
+    margin-top: 6rem;
     h2{
       padding-bottom: 2rem;
       font-size: 220%;
@@ -19,11 +20,20 @@
       font-family: $basic-font;
       color: white;
     }
-    p{
-      font-size: 180%;
-      margin: 0;
-      font-family: $basic-font;
-      color: white;
+    &__textholder{
+      p{
+        font-size: 2rem;
+        margin: 0;
+        font-family: $basic-font;
+        color: white;
+      }
+      img{
+        transform: translate(3rem,7rem);
+        display: block;
+        float: right;
+        border-radius: 1.4rem;
+        width: 40%;
+      }
     }
   }
 }
