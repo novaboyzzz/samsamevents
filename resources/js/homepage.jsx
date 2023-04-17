@@ -6,7 +6,7 @@ import Ann_bar from './ann-bar';
 import Nav_bar from './nav-bar';
 import Storefront from './storefront';
 import Category from './category';
-import About from './about_me-component';
+import About from './about_me';
 
 //scss import
 import "../scss/Homepage.scss";
