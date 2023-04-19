@@ -7,8 +7,8 @@ import '../scss/loading.scss'
 const LoadingScreen = () => {
   return (
     <div className="loading-screen">
-      <div class="loading-screen__shadow" />
-      <div class="loading-screen__ball">
+      <div className="loading-screen__shadow" />
+      <div className="loading-screen__ball">
         S&S
       </div>
     </div>
