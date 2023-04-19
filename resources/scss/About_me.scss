@@ -4,7 +4,7 @@
 .about-me_wrapper{
   transform: translateY(9.4rem);
   width: 100%;
-  padding: 2rem 0;
+  margin: 7vw 0;
   display: flex;
   justify-content: center;
   &__inner{
@@ -12,23 +12,22 @@
     padding: 1.4rem;
     width: 80%;
     background-color: $blue-color-main;
-    margin-top: 6rem;
     h2{
       padding-bottom: 2rem;
-      font-size: 220%;
+      font-size: 3vw;
       margin: 0;
       font-family: $basic-font;
       color: white;
     }
     &__textholder{
       p{
-        font-size: 2rem;
+        font-size: 2vw;
         margin: 0;
         font-family: $basic-font;
         color: white;
       }
       img{
-        transform: translate(3rem,7rem);
+        transform: translate(3vw,6vw);
         display: block;
         float: right;
         border-radius: 1.4rem;
