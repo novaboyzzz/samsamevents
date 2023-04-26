@@ -7,11 +7,16 @@ import {
 } from "react-router-dom";
 
 import App from './homepage';
+import Product_slider from './product-slider';
 
 const router = createBrowserRouter([
     {    
     path: "/", 
     element: <App />,
+    },
+    {    
+    path: "/product", 
+    element: <Product_slider />,
     },
 ])
 

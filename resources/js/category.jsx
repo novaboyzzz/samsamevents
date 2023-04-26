@@ -5,6 +5,7 @@ import React from "react";
 import "../scss/Category.scss";
 
 //component import
+import Arrow from "../js/regular-arrow";
 import stImage1 from "../../public/images/category/challengekussens.png";
 import stImage2 from "../../public/images/category/springkussens.png";
 import stImage3 from "../../public/images/category/stormbaan.png";
@@ -25,7 +26,7 @@ function Category() {
             </span>
             <span className="category_wrapper__title_wrapper__title__right">
               Alle categorieën
-              <div className="arrow"></div>
+              <Arrow color="red"/>
             </span>
           </h1>
 
