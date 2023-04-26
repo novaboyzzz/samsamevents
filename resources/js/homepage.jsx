@@ -7,6 +7,7 @@ import Nav_bar from './nav-bar';
 import Storefront from './storefront';
 import Category from './category';
 import About from './about_me';
+import Product_slider from './product-slider';
 
 //scss import
 import "../scss/Homepage.scss";
@@ -33,6 +34,7 @@ function App() {
             <Storefront />
             <Category />
             <About />
+            <Product_slider/>
             </>
           )}
         </div>
