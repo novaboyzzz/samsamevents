@@ -8,6 +8,7 @@ import Storefront from './storefront';
 import Category from './category';
 import About from './about_me';
 import Product_slider from './product-slider';
+import Footer from './footer';
 
 //scss import
 import "../scss/Homepage.scss";
@@ -35,6 +36,7 @@ function App() {
             <Category />
             <About />
             <Product_slider/>
+            <Footer/>
             </>
           )}
         </div>
