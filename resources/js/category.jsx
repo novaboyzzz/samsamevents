@@ -29,33 +29,21 @@ function Category() {
               <Arrow color="red"/>
             </span>
           </h1>
-
-          {/* end category_wrapper__title_wrapper */}
         </div>
         <div className="category_wrapper__block_grid">
           {images.map((image, index) => (
             <div className="category_wrapper__block_grid__block" key={image}>
               <div className="category_wrapper__block_grid__block__image">
                 <img src={image} alt={image} />
-
-                {/* end category_wrapper__block_grid__block__image */}
               </div>
               <div className="category_wrapper__block_grid__block__title">
                 <h3>
                   {CategoryNames[index % CategoryNames.length]}
                 </h3>
-
-                {/* end category_wrapper__block_grid__block__title */}
               </div>
-              
-              {/* end category_wrapper__block_grid__block */}
             </div>
           ))}
-
-          {/* end category_wrapper__block_grid */}
         </div>
-
-          {/* end category_wrapper */}
       </div>
     </>
   );
