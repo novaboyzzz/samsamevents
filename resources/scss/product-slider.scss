@@ -1,6 +1,6 @@
 @import 'schemes';
 
-.product_slider{
+.product-slider{
   transform: translateY(9.4rem);
   max-width: 1200px;
   margin: 7vw auto;
@@ -48,11 +48,11 @@
       }
     }
   }
-  &__wrapper{
+  .slider-wrapper{
     &__inner{
       white-space: nowrap;
       transition: .5s;
-      &__block{
+      .slider-block{
         display: inline-block;
         vertical-align: top;
         font-family: $basic-font;
@@ -61,6 +61,9 @@
         margin-left: 5%;
         box-shadow: 0px 0px 5px grey;
         text-align: center;
+        a{
+          text-decoration: none;
+        }
         &__image{
           border-radius: 1rem;
           overflow: hidden;
@@ -69,10 +72,12 @@
           }
         }
         &__name{
+          text-decoration: none;
           letter-spacing: 1px;
           font-size: 1.8vw;
           font-weight: 600;
           margin: .5rem 0;
+          color: black;
         }
         &__price{
           letter-spacing: 1px;
@@ -80,7 +85,7 @@
           font-weight: 600;
           margin: .5rem 0;
         }
-        &__cartBtn{
+        &__cart-button{
           font-size: 1.2vw;
           font-weight: 600;
           padding: .5rem 0;
@@ -92,7 +97,7 @@
           box-shadow: 0px 0px 3px grey;
         }
       }
-      &__block:first-child{
+      .slider-block:first-child{
         margin-left: 0;
       }
     }

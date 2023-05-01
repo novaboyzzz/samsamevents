@@ -81,7 +81,9 @@ function Nav_bar() {
                         </h3>
                     </li>
                 </ul>
-                <img src={myImage} alt="samsamevents" className='nav-bar__logo'/>
+                <a href="/">
+                    <img src={myImage} alt="samsamevents" className='logo'/>
+                </a>
             </header>
         </>
     );

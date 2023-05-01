@@ -172,8 +172,7 @@
             //text
         }
     }
-
-    &__logo{
+    a{
         //shaping and positioning
         position: relative;
         margin: 0 auto;
@@ -182,5 +181,15 @@
         //layout
 
         //text
+        .logo{
+            //shaping and positioning
+            position: relative;
+            margin: 0 auto;
+            height: 5rem;
+    
+            //layout
+    
+            //text
+        }
     }
 }
