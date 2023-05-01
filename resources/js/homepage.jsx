@@ -15,7 +15,7 @@ import "../scss/Homepage.scss";
 import LoadingScreen from './loading';
 
 //create function
-function App() {
+function Homepage() {
     const [isLoading, setIsLoading] = useState(true);
   
     useEffect(() => {
@@ -43,4 +43,4 @@ function App() {
     );
 }
 
-export default App;
+export default Homepage;

@@ -6,17 +6,17 @@ import {
     RouterProvider 
 } from "react-router-dom";
 
-import App from './homepage';
-import Product_slider from './product-slider';
+import Homepage from './homepage';
+import Productpage from './productpage';
 
 const router = createBrowserRouter([
     {    
     path: "/", 
-    element: <App />,
+    element: <Homepage />,
     },
     {    
-    path: "/product", 
-    element: <Product_slider />,
+    path: "/product/:name", 
+    element: <Productpage />,
     },
 ])
 

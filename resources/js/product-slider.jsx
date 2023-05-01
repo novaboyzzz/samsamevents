@@ -22,6 +22,7 @@ const products = [
 
 //create function
 function Product_slider() {
+  const [lastScrollTime, setLastScrollTime] = useState(0);
   const [index, setIndex] = useState(0);
   const productArray = products.length;
   const handleScroll = useRef(null);
@@ -31,12 +32,10 @@ function Product_slider() {
     const slideAmount = 32;
     div.style.transform = `translateX(${index * slideAmount}%)`;
   }, [index]);
-  
 
   const handleIncrement = () => {
     if(index >= -productArray + 2){
       setIndex((prevIndex) => prevIndex - 1);
-      console.log(index)
     } else {
       setIndex(-productArray + 1)
     }
@@ -45,16 +44,31 @@ function Product_slider() {
   const handleDecrement = () => {
     if(index <= -1){
       setIndex((prevIndex) => prevIndex + 1);
-      console.log(index)
     } else {
       setIndex(0)
+    }
+  };
+  
+  const handleScrollLeft = () => {
+    const now = Date.now();
+    if (now - lastScrollTime > 500) {
+      setLastScrollTime(now);
+      handleDecrement();
+    }
+  };
+
+  const handleScrollRight = () => {
+    const now = Date.now();
+    if (now - lastScrollTime > 500) {
+      setLastScrollTime(now);
+      handleIncrement();
     }
   };
 
   return(
     <>
-    <div className="product_slider">
-      <div className="product_slider__title-bar">
+    <div className="product-slider">
+      <div className="product-slider__title-bar">
         <h2>populaire producten</h2>
         <div className="arrow-holder">
         <button className="arrow-holder__left" onClick={handleDecrement}>
@@ -65,20 +79,22 @@ function Product_slider() {
         </button>
         </div>
       </div>
-      <div className="product_slider__wrapper">
-        <div className="product_slider__wrapper__inner" ref={handleScroll}>
+      <div className="slider-wrapper" onWheel={(event) => event.deltaX > 0 ? handleScrollRight() : handleScrollLeft()}>
+        <div className="slider-wrapper__inner" ref={handleScroll}>
           {products.map((product) => (
-            <div className="product_slider__wrapper__inner__block" key={product}>
-              <div className="product_slider__wrapper__inner__block__image">
+            <div className="slider-block" key={product}>
+            <a href={`/product/${encodeURIComponent(product[0])}`}>
+              <div className="slider-block__image">
                 <img src={product[2]} alt={product[0]}/>           
               </div>
-              <div className="product_slider__wrapper__inner__block__name">
+              <div className="slider-block__name">
                 {product[0]}
               </div>
-              <div className="product_slider__wrapper__inner__block__price">
+            </a>
+              <div className="slider-block__price">
                 {product[1]}
               </div>
-              <div className="product_slider__wrapper__inner__block__cartBtn">
+              <div className="slider-block__cart-button">
                 In winkelwagen
               </div>
             </div>

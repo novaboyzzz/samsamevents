@@ -17,4 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/product/{name}', function () {
+    return view('product');
+});
 route::get('/admin',[DashboardConrtoller::class,'index']);

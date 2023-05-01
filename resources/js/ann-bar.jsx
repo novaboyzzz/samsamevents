@@ -32,7 +32,7 @@ function Ann_bar() {
         <>
             <div ref={myRef} className="ann_bar">
                 <h3 className="ann_bar__content">
-                    het beste feest met een springkussen
+                    het beste feest is met een springkussen
                 </h3>
             </div>
         </>
