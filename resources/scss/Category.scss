@@ -2,7 +2,7 @@
 @import 'Schemes';
 
 //start scss
-.category_wrapper{
+.category-wrapper{
     //shaping and positioning
     transform: translateY(9.4rem);
     max-width: $use-max-width;
@@ -10,13 +10,13 @@
     //layout
     padding: 0 5rem;
     //text
-    &__title_wrapper{
+    .title-wrapper{
         //shaping and positioning
         position: relative;
         height: auto;
         //layout
         //text
-        &__title{
+        .title{
             height: 2rem;
             display: flex;
             justify-content:space-between;
@@ -78,7 +78,7 @@
                 }
             }
             &__right:hover{
-                    .arrow{
+                    *{
                         //shaping and positioning
                         transform: translateX(20%);
                         //layout
@@ -88,7 +88,7 @@
                 }
         }
     }
-    &__block_grid{
+    &__block-grid{
         //shaping and positioning
         grid-template-columns: 100%;
         position: relative;
@@ -108,7 +108,7 @@
             //text
             grid-template-columns: 30% 30% 30%;
         }
-        &__block{
+        .block{
             &__image{
                 //shaping and positioning
                 //layout
