@@ -6,14 +6,16 @@ import Ann_bar from './ann-bar';
 import Nav_bar from './nav-bar';
 import Storefront from './storefront';
 import Category from './category';
-import About from './about_me-component';
+import About from './about_me';
+import Product_slider from './product-slider';
+import Footer from './footer';
 
 //scss import
 import "../scss/Homepage.scss";
 import LoadingScreen from './loading';
 
 //create function
-function App() {
+function Homepage() {
     const [isLoading, setIsLoading] = useState(true);
   
     useEffect(() => {
@@ -33,10 +35,12 @@ function App() {
             <Storefront />
             <Category />
             <About />
+            <Product_slider/>
+            <Footer/>
             </>
           )}
         </div>
     );
 }
 
-export default App;
+export default Homepage;

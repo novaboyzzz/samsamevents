@@ -6,7 +6,7 @@
     //shaping and positioning
     transform: translateY(9.4rem);
     max-width: $use-max-width;
-    margin: 7rem auto;
+    margin: 7vw auto;
     //layout
     padding: 0 5rem;
     //text
@@ -76,23 +76,6 @@
                     //text
                     font-size: 1.2rem;
                 }
-                .arrow{
-                    //shaping and positioning
-                    clip-path: polygon(50% 10%, 62% 1%, 100% 50%, 61% 99%, 50% 90%, 77% 57%, 0 57%, 0 43%, 77% 43%);
-                    width: 1rem;
-                    height: .8rem;
-                    //layout
-                    background-color: $red-color-main;
-                    transition: .6s;
-                    //text
-                    @media (min-width: $medium-screen) {
-                        //shaping and positioning
-                        //layout
-                        //text
-                        width: 1.2rem;
-                        height: 1rem;
-                    }
-                }
             }
             &__right:hover{
                     .arrow{
@@ -107,12 +90,18 @@
     }
     &__block_grid{
         //shaping and positioning
-        grid-template-columns: 47.5% 47.5%;
+        grid-template-columns: 100%;
         position: relative;
         column-gap: 5%;
         display: grid;
         //layout
         //text
+        @media (min-width: $small-screen) {
+            //shaping and positioning
+            //layout
+            //text
+            grid-template-columns: 47.5% 47.5%;
+        }
         @media (min-width: $medium-screen) {
             //shaping and positioning
             //layout

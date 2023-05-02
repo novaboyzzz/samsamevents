@@ -2,7 +2,7 @@
 import React from "react";
 
 //scss import
-import "../scss/About_me-component.scss";
+import "../scss/About_me.scss";
 
 //component import
 import about_Image from "../../public/images/about-image.png";

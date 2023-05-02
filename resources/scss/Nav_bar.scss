@@ -64,7 +64,7 @@
                 text-decoration: none;
             }
 
-            .arrow{
+            .NavBarArrow{
                 //shaping and positioning
                 transform: rotateX(0deg);
 
@@ -127,7 +127,7 @@
         }
         
         &__item:hover{
-            .arrow{
+            .NavBarArrow{
                 //shaping and positioning
                 transform: rotateX(540deg);
                 transition: .5s;
@@ -172,8 +172,7 @@
             //text
         }
     }
-
-    &__logo{
+    a{
         //shaping and positioning
         position: relative;
         margin: 0 auto;
@@ -182,5 +181,15 @@
         //layout
 
         //text
+        .logo{
+            //shaping and positioning
+            position: relative;
+            margin: 0 auto;
+            height: 5rem;
+    
+            //layout
+    
+            //text
+        }
     }
 }
