@@ -18,25 +18,27 @@ const images = [stImage1, stImage2, stImage3];
 function Category() {
   return(
     <>
-      <div className="category_wrapper">
-        <div className="category_wrapper__title_wrapper">
-          <h1 className="category_wrapper__title_wrapper__title">
-            <span className="category_wrapper__title_wrapper__title__left">
+      <div className="category-wrapper">
+        <div className="title-wrapper">
+          <h1 className="title">
+            <span className="title__left">
               kies een category
             </span>
-            <span className="category_wrapper__title_wrapper__title__right">
-              Alle categorieën
-              <Arrow color="red"/>
-            </span>
+            <a href="/category">
+              <span className="title__right">
+                Alle categorieën
+                <Arrow color="red" className="arrow"/>
+              </span>
+            </a>
           </h1>
         </div>
-        <div className="category_wrapper__block_grid">
+        <div className="category-wrapper__block-grid">
           {images.map((image, index) => (
-            <div className="category_wrapper__block_grid__block" key={image}>
-              <div className="category_wrapper__block_grid__block__image">
+            <div className="block" key={image}>
+              <div className="block__image">
                 <img src={image} alt={image} />
               </div>
-              <div className="category_wrapper__block_grid__block__title">
+              <div className="block__title">
                 <h3>
                   {CategoryNames[index % CategoryNames.length]}
                 </h3>

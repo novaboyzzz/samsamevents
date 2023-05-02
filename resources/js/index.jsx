@@ -8,6 +8,7 @@ import {
 
 import Homepage from './homepage';
 import Productpage from './productpage';
+import Categorypage from './categorypage';
 
 const router = createBrowserRouter([
     {    
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
     {    
     path: "/product/:name", 
     element: <Productpage />,
+    },
+    {    
+    path: "/category", 
+    element: <Categorypage />,
     },
 ])
 

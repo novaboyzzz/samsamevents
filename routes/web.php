@@ -21,4 +21,9 @@ Route::get('/', function () {
 Route::get('/product/{name}', function () {
     return view('product');
 });
+
+Route::get('/category', function () {
+    return view('category');
+});
+
 route::get('/admin',[DashboardConrtoller::class,'index']);
