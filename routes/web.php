@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\DashboardConrtoller;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,12 +19,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/product/{name}', function () {
-    return view('product');
-});
+
 
 Route::get('/category', function () {
     return view('category');
 });
-route::get('/admin', [DashboardConrtoller::class, 'index']);
+route::resource('/admin', DashboardController::class);
+route::resource('/products', ProductController::class);
 route::view('/', "welcome");

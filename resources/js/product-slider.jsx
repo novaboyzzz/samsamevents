@@ -1,6 +1,6 @@
 //react import
 import React, { useState, useEffect, useRef } from "react";
-
+import axios from 'axios';
 //scss import
 import "../scss/product-slider.scss";
 
@@ -64,6 +64,19 @@ function Product_slider() {
       handleIncrement();
     }
   };
+  const [data, setData] = useState();
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.post('/api/products');
+      setData(response.data);
+    } catch (error) {
+      console.error(error); // Handle any errors
+    }
+  };
+  useEffect(() => {
+    fetchData(); // Fetch the category data when the component mounts
+  }, []);
 
   return(
     <>
@@ -81,18 +94,18 @@ function Product_slider() {
       </div>
       <div className="slider-wrapper" onWheel={(event) => event.deltaX > 0 ? handleScrollRight() : handleScrollLeft()}>
         <div className="slider-wrapper__inner" ref={handleScroll}>
-          {products.map((product) => (
-            <div className="slider-block" key={product}>
+          {data && data.map((product) => (
+            <div className="slider-block" key={data.id}>
             <a href={`/product/${encodeURIComponent(product[0])}`}>
               <div className="slider-block__image">
-                <img src={product[2]} alt={product[0]}/>           
+                {/* <img src={product[2]} alt={product[0]}/>            */}
               </div>
               <div className="slider-block__name">
-                {product[0]}
+                {product.name}
               </div>
             </a>
               <div className="slider-block__price">
-                {product[1]}
+                {product.price}
               </div>
               <div className="slider-block__cart-button">
                 In winkelwagen
