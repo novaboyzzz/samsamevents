@@ -1,0 +1,68 @@
+@import 'schemes';
+
+.category-body{
+  padding: calc(2.5rem + 9.3rem) 2.5rem 0 2.5rem;
+  &__main{
+    //shaping and positioning
+    grid-template-columns: 47.5% 47.5%;
+    position: relative;
+    column-gap: 5%;
+    display: grid;
+    //layout
+    //text
+    @media (min-width: $medium-screen) {
+      //shaping and positioning
+      //layout
+      //text
+      grid-template-columns: 30% 30% 30%;
+    }
+    .block{
+      &__image{
+        //shaping and positioning
+        //layout
+        overflow: hidden;
+        //text
+        img{
+          //shaping and positioning
+          width: 100%;
+          //layout
+          filter: brightness(80%);
+          transition: .5s;
+          //text
+        }
+      }
+      &__image:hover{
+        img{
+          //shaping and positioning
+          //layout
+          filter: brightness(100%);
+          transition: .5s;
+          scale: 1.05;
+          //text
+        }
+      }
+      &__title{
+        h3{
+          //shaping and positioning
+          //layout
+          transform: translateX(2%);
+          //text
+          font-family: $basic-font;
+          font-size: 1.2rem;
+          @media (min-width: $medium-screen) {
+            //shaping and positioning
+            //layout
+            //text
+            font-size: 1.2rem;
+          }
+          @media (min-width: $large-screen) {
+            //shaping and positioning
+            //layout
+            //text
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}

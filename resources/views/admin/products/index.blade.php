@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>hallo</h1>
+    <a href="{{route('products.create')}}">aaaaaaaaa</a>
 </body>
 </html>

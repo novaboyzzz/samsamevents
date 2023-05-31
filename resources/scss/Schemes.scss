@@ -1,0 +1,36 @@
+
+//shaping and positioning
+//layout
+//text
+
+//vw ratio's
+$small-screen: 575px;
+$medium-screen: 768px;
+$large-screen: 992px;
+$extra-large-screen: 1200px;
+
+//max-width
+$use-max-width: 1200px;
+
+//fonts
+@font-face {
+    src: url('/public/fonts/Phenomena-Regular.ttf');
+    font-family: 'basic-font';
+}
+$basic-font: 'basic-font';
+
+//pink colors
+$pink-color-light: #F9ECF0;
+
+//yellow colors
+$yellow-color-main: #F3CA40;
+
+//red colors
+$red-color-main: #ED1C24;
+
+//blue colors
+$blue-color-main: #32B2E8;
+$blue-color-dark: #006F9E;
+
+//orange colors
+$orange-color-main: #F19037;

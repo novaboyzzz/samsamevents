@@ -1,0 +1,49 @@
+@import 'schemes';
+
+.footer{
+  box-shadow: 0px 0px 5px 2px grey;
+  transform: translateY(9.4rem);
+  background-color: white;
+  width: 100%;
+  .socials{
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.5vw;
+    color: grey;
+    font-family: $basic-font;
+    &__follow{
+      padding-top: .5rem;
+      margin: 1rem 0;
+    }
+    &__links{
+      display: flex;
+      justify-content: center;
+      gap: 3%;
+      img{
+        width: 2vw;
+      }
+    }
+  }
+  .contact{
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-evenly;
+    font-family: $basic-font;
+    &__left{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      > * {
+        margin: .2rem;
+      }
+    }
+    &__right{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      > * {
+        margin: .2rem;
+      }
+    }
+  }
+}

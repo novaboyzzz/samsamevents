@@ -6,12 +6,15 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^3.1.0",
-    "axios": "^1.1.2",
+    "axios": "^1.4.0",
     "laravel-vite-plugin": "^0.7.2",
     "lodash": "^4.17.19",
+    "node-sass": "^8.0.0",
     "postcss": "^8.1.14",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "sass": "^1.59.2",
+    "sass-loader": "^13.2.0",
     "vite": "^4.1.1"
   },
   "name": "samsamevents",
@@ -31,5 +34,11 @@
   "bugs": {
     "url": "https://github.com/novaboyzzz/samsamevents/issues"
   },
-  "homepage": "https://github.com/novaboyzzz/samsamevents#readme"
+  "homepage": "https://github.com/novaboyzzz/samsamevents#readme",
+  "dependencies": {
+    "react-router": "^6.9.0",
+    "react-router-dom": "^6.9.0",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1"
+  }
 }

@@ -1,9 +1,34 @@
+//react import
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import { 
+    createBrowserRouter, 
+    RouterProvider 
+} from "react-router-dom";
 
-window.onload = function() {
-    const rootElement = document.getElementById('root');
-    const root = ReactDOM.createRoot(rootElement);
-    root.render(<App />);
-  };
+import Homepage from './homepage';
+import Productpage from './productpage';
+import Categorypage from './categorypage';
+
+const router = createBrowserRouter([
+    {    
+    path: "/", 
+    element: <Homepage />,
+    },
+    {    
+    path: "/product/:name", 
+    element: <Productpage />,
+    },
+    {    
+    path: "/category", 
+    element: <Categorypage />,
+    },
+])
+
+
+//load function
+document.addEventListener('DOMContentLoaded', function () {
+    ReactDOM.createRoot(document.getElementById("root")).render(
+      <RouterProvider router={router}/>
+    );
+});

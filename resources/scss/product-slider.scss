@@ -1,0 +1,105 @@
+@import 'schemes';
+
+.product-slider{
+  transform: translateY(9.4rem);
+  max-width: 1200px;
+  margin: 7vw auto;
+  padding: 5rem 5rem;
+  &__title-bar{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    h2{
+      //shaping and positioning
+      position: relative;
+      margin: 0;
+      //layout
+      display: block;
+      //text
+      font-family: $basic-font;
+      line-height: 2rem;
+      font-size: .8rem;
+      @media (min-width: $small-screen) {
+        //shaping and positioning
+        //layout
+        //text
+        font-size: 1rem;
+      }
+      @media (min-width: $medium-screen) {
+        //shaping and positioning
+        //layout
+        //text
+        font-size: 1.2rem;
+      }
+      @media (min-width: $large-screen) {
+        //shaping and positioning
+        //layout
+        //text
+        font-size: 1.4rem;
+      }
+    }
+    .arrow-holder{
+      height: 100%;
+      display: flex;
+      width: 5rem;
+      justify-content: space-around;
+      &__left{
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .slider-wrapper{
+    &__inner{
+      white-space: nowrap;
+      transition: .5s;
+      .slider-block{
+        display: inline-block;
+        vertical-align: top;
+        font-family: $basic-font;
+        width: 25%;
+        padding: 1%;
+        margin-left: 5%;
+        box-shadow: 0px 0px 5px grey;
+        text-align: center;
+        a{
+          text-decoration: none;
+        }
+        &__image{
+          border-radius: 1rem;
+          overflow: hidden;
+          img{
+            width: 100%;
+          }
+        }
+        &__name{
+          text-decoration: none;
+          letter-spacing: 1px;
+          font-size: 1.8vw;
+          font-weight: 600;
+          margin: .5rem 0;
+          color: black;
+        }
+        &__price{
+          letter-spacing: 1px;
+          font-size: 1.2vw;
+          font-weight: 600;
+          margin: .5rem 0;
+        }
+        &__cart-button{
+          font-size: 1.2vw;
+          font-weight: 600;
+          padding: .5rem 0;
+          border-radius: 1rem;
+          background-color: $orange-color-main;
+          color: black;
+          letter-spacing: 1.5px;
+          border: white 3px solid;
+          box-shadow: 0px 0px 3px grey;
+        }
+      }
+      .slider-block:first-child{
+        margin-left: 0;
+      }
+    }
+  }
+}
