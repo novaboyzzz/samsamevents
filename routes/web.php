@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/product/{name}', function () {
     return view('product');
@@ -25,5 +25,5 @@ Route::get('/product/{name}', function () {
 Route::get('/category', function () {
     return view('category');
 });
-
-route::get('/admin',[DashboardConrtoller::class,'index']);
+route::get('/admin', [DashboardConrtoller::class, 'index']);
+route::view('/', "welcome");

@@ -1,22 +1,32 @@
 //react import
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 
 //scss import
 import "../scss/Category.scss";
 
 //component import
 import Arrow from "../js/regular-arrow";
-import stImage1 from "../../public/images/category/challengekussens.png";
-import stImage2 from "../../public/images/category/springkussens.png";
-import stImage3 from "../../public/images/category/stormbaan.png";
 
 //create arrays
-const CategoryNames = ['challenge kussens', 'spring kussens', 'stormbaan'];
-const images = [stImage1, stImage2, stImage3];
 
 //create function
 function Category() {
-  return(
+  const [data, setData] = useState();
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.post('/api/categories');
+      setData(response.data);
+    } catch (error) {
+      console.error(error); // Handle any errors
+    }
+  };
+  useEffect(() => {
+    fetchData(); // Fetch the category data when the component mounts
+  }, []);
+
+  return (
     <>
       <div className="category-wrapper">
         <div className="title-wrapper">
@@ -27,21 +37,19 @@ function Category() {
             <a href="/category">
               <span className="title__right">
                 Alle categorieën
-                <Arrow color="red" className="arrow"/>
+                <Arrow color="red" className="arrow" />
               </span>
             </a>
           </h1>
         </div>
         <div className="category-wrapper__block-grid">
-          {images.map((image, index) => (
-            <div className="block" key={image}>
+          {data && data.map(category => (
+            <div className="block" key={category.id}>
               <div className="block__image">
-                <img src={image} alt={image} />
+                <img src={category.img} alt={category.name} />
               </div>
               <div className="block__title">
-                <h3>
-                  {CategoryNames[index % CategoryNames.length]}
-                </h3>
+                <h3>{category.name}</h3>
               </div>
             </div>
           ))}
