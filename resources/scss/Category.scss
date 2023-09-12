@@ -6,7 +6,7 @@
     //shaping and positioning
     transform: translateY(9.4rem);
     max-width: $use-max-width;
-    margin: 7vw auto;
+    margin: 7vw auto 0 auto;
     //layout
     padding: 0 5rem;
     //text
@@ -120,6 +120,7 @@
                     //layout
                     filter: brightness(80%);
                     transition: .5s;
+                    border-radius: 1rem;
                     //text
                 }
             }

@@ -34,8 +34,8 @@ function Homepage() {
             <Nav_bar />
             <Storefront />
             <Category />
-            <About />
             <Product_slider/>
+            <About />
             <Footer/>
             </>
           )}

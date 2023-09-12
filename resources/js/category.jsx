@@ -11,8 +11,17 @@ import stImage2 from "../../public/images/category/springkussens.png";
 import stImage3 from "../../public/images/category/stormbaan.png";
 
 //create arrays
-const CategoryNames = ['challenge kussens', 'spring kussens', 'stormbaan'];
-const images = [stImage1, stImage2, stImage3];
+const CategoryNames = [
+  'challenge kussens',
+  'spring kussens',
+  'stormbaan',
+];
+
+const images = [
+  stImage1,
+  stImage2,
+  stImage3,
+];
 
 //create function
 function Category() {
@@ -22,7 +31,7 @@ function Category() {
         <div className="title-wrapper">
           <h1 className="title">
             <span className="title__left">
-              kies een category
+              kies je categorie:
             </span>
             <a href="/category">
               <span className="title__right">
