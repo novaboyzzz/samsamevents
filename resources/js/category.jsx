@@ -1,5 +1,5 @@
 //react import
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 //scss import
 import "../scss/Category.scss";
@@ -25,6 +25,21 @@ const images = [
 
 //create function
 function Category() {
+  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const mq = window.matchMedia('(min-width: 768px)');
+      setViewportWidth(mq.matches ? window.innerWidth : 0);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return(
     <>
       <div className="category-wrapper">
@@ -42,18 +57,33 @@ function Category() {
           </h1>
         </div>
         <div className="category-wrapper__block-grid">
-          {images.map((image, index) => (
-            <div className="block" key={image}>
-              <div className="block__image">
-                <img src={image} alt={image} />
+          {viewportWidth < 768 ? (
+            images.map((image, index) => (
+              <div className="block" key={image}>
+                <div className="block__title">
+                  <h3>
+                    {CategoryNames[index % CategoryNames.length]}
+                  </h3>
+                </div>
+                <div className="block__image">
+                  <img src={image} alt={image} />
+                </div>
               </div>
-              <div className="block__title">
-                <h3>
-                  {CategoryNames[index % CategoryNames.length]}
-                </h3>
+            ))
+          ) : 
+            images.map((image, index) => (
+              <div className="block" key={image}>
+                <div className="block__image">
+                  <img src={image} alt={image} />
+                </div>
+                <div className="block__title">
+                  <h3>
+                    {CategoryNames[index % CategoryNames.length]}
+                  </h3>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
     </>
