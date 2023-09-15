@@ -110,10 +110,5 @@ class CategoryController extends Controller
         return redirect()->route('categories.index');
     }
 
-    public function Category()
-    {
-        $data =  Category::all();
-        
-        return response()->json($data);
-    }
+    
 }
