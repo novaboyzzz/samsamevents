@@ -10,7 +10,6 @@ class DashboardConrtoller extends Controller
 {
     public function index()
     {
-        $data =  Category::all();
-        return response()->json($data);
+       return view('admin.dashboard.index');
     }
 }

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+        // dd($categories);
+        return view('admin.categories.index',compact('categories'));
     }
 
     /**
@@ -24,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+     return view('admin.categories.create');
     }
 
     /**
@@ -35,7 +38,18 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $category = new Category;
+        $category->name = $request->name;
+        if ($request->image !== null) {
+            $file = $request->image;
+            $filename = date('Y_m_d_His').'_'.str_replace(' ', '', $file->getClientOriginalName());
+            $file->move(public_path('/images/category'), $filename);
+            unset($category->img);
+            $category->img = $filename;
+        }
+        $category->save();
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -57,7 +71,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('admin.categories.edit',compact('category'));
     }
 
     /**
@@ -69,7 +83,19 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $category = Category::where('id', $category->id)->first();
+        if($request->name){
+            $category->name = $request->name;
+        }
+        if ($request->image !== null) {
+            $file = $request->image;
+            $filename = date('Y_m_d_His').'_'.str_replace(' ', '', $file->getClientOriginalName());
+            $file->move(public_path('/images/category'), $filename);
+            unset($category->img);
+            $category->img = $filename;
+        }
+        $category->save();
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -80,6 +106,14 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return redirect()->route('categories.index');
+    }
+
+    public function Category()
+    {
+        $data =  Category::all();
+        
+        return response()->json($data);
     }
 }
