@@ -46,7 +46,7 @@ function Category() {
           {data && data.map(category => (
             <div className="block" key={category.id}>
               <div className="block__image">
-                <img src={category.img} alt={category.name} />
+                <img src={`/images/category/${category.img}`} alt={category.name}/>
               </div>
               <div className="block__title">
                 <h3>{category.name}</h3>

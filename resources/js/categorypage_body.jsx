@@ -1,46 +1,42 @@
 
 //react import
-import React from "react";
-
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 //scss import
 import "../scss/Category-body.scss";
 
-//component import
-import stImage1 from "../../public/images/category/challengekussens.png";
-import stImage2 from "../../public/images/category/springkussens.png";
-import stImage3 from "../../public/images/category/stormbaan.png";
-
-//create arrays
-const CategoryNames = [
-  'challenge kussens',
-  'spring kussens',
-  'stormbaan',
-];
-
-const images = [
-  stImage1,
-  stImage2,
-  stImage3,
-];
 
 //create function
 function Category_body() {
+  
+  const [data, setData] = useState();
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.post('/api/categories');
+      setData(response.data);
+    } catch (error) {
+      console.error(error); // Handle any errors
+    }
+  };
+  useEffect(() => {
+    fetchData(); // Fetch the category data when the component mounts
+  }, []);
+
   return(
     <>
       <div className="category-body">
         <div className="category-body__main">
-            {images.map((image, index) => (
-              <div className="block" key={image}>
-                <div className="block__image">
-                  <img src={image} alt={image} />
-                </div>
-                <div className="block__title">
-                  <h3>
-                    {CategoryNames[index % CategoryNames.length]}
-                  </h3>
-                </div>
+        {data && data.map(category => (
+            <div className="block" key={category.id}>
+              <div className="block__image">
+                <img src={`/images/category/${category.img}`} alt={category.name}/>
               </div>
-            ))}
+              <div className="block__title">
+                <h3>{category.name}</h3>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </>

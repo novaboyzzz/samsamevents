@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardConrtoller;
 use App\Models\Category;
@@ -20,4 +21,5 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('/categories', [CategoryController::class, 'Category']);
+Route::post('/categories', [ApiController::class, 'Category']);
+Route::post('/products', [ApiController::class, 'product']);
