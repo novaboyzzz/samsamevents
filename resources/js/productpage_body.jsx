@@ -1,25 +1,36 @@
 
 //react import
-import React, {useState} from "react";
+import React, { useState, useEffect  } from "react";
+import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 //scss import
 import "../scss/product-body.scss";
 
 //component import
-import product1 from "../../public/images/products/Levend_Sjoelen.png"
-import product2 from "../../public/images/products/Levend_Sjoelen-2.png"
 
 //create arrays
-const productArray = [
-  product1,
-  product2,
-]
 
 //create function
 function Product_body() {
-  const { name } = useParams();
-  const [imgSrc, setImgSrc] = useState(productArray[0]);
+  
+  const [data, setData] = useState();
+
+  const fetchData = async () => {
+    try {
+      const productId = window.location.pathname.split('/').pop();
+      const response = await axios.post('/api/products/${product_id}');
+      setData(response.data);
+    } catch (error) {
+      console.error(error); // Handle any errors
+    }
+  };
+  useEffect(() => {
+    fetchData(); // Fetch the category data when the component mounts
+  }, []);
+
+  // const { name } = useParams();
+  // const [imgSrc, setImgSrc] = useState(productArray[0]);
 
   const MakeView = () => {
     const target = event.target;
@@ -35,32 +46,42 @@ function Product_body() {
 
   return(
     <>
-      <div className="product-wrapper">
-        <div className="product-wrapper__left">
-          <div className="product-main-view">
-            <img src={imgSrc}/>
-          </div>
-          <div className="product-other-views">
-            {productArray.slice(0,5).map((product) => (
-            <img src={product} onClick={MakeView}/>
-            ))}
-          </div>
-        </div>
-        <div className="product-wrapper__right">
-          <div className="title-bar">
-            { name }
-          </div>
-          <div className="price-bar">
-            €100,-
-          </div>
-          <div className="description-bar">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </div>
-          <div className="cart-button">
-            in winkelwagen
-          </div>
-        </div>
+    <div className="product-wrapper">
+      <div className="product-wrapper__left">
+        {data && data.map(product => (
+          <>
+            <div className="product-main-view">
+              <img src={product.image_1} alt={product.name} />
+            </div>
+            <div className="product-other-views">
+              <img src={product.image_1} alt={product.name} onClick={MakeView} />
+              <img src={product.image_2} alt={product.name} onClick={MakeView} />
+              <img src={product.image_3} alt={product.name} onClick={MakeView} />
+              <img src={product.image_4} alt={product.name} onClick={MakeView} />
+              <img src={product.image_5} alt={product.name} onClick={MakeView} />
+            </div>
+          </>
+        ))}
       </div>
+      <div className="product-wrapper__right">
+        {data && data.map(product => (
+          <>
+            <div className="title-bar">
+              {product.name}
+            </div>
+            <div className="price-bar">
+              {product.price}
+            </div>
+            <div className="description-bar">
+              {product.description}
+            </div>
+            <div className="cart-button">
+              in winkelwagen
+            </div>
+          </>
+        ))}
+      </div>
+    </div>
     </>
   );
 }

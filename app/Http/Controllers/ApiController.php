@@ -11,10 +11,17 @@ class ApiController extends Controller
     public function Category()
     {
         $data =  Category::all();
+        return response()->json($data);
+
+    }
+    public function allProduct()
+    {
+        $data =  Product::all();
         
         return response()->json($data);
     }
-    public function product()
+
+    public function product(int $id)
     {
         $data =  Product::all();
         
