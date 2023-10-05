@@ -24,12 +24,12 @@
                         <td><img src="{{ asset('images/product/' . $product->image_3) }}" alt="" style="width: 100px"></td>
                         <td><img src="{{ asset('images/product/' . $product->image_4) }}" alt="" style="width: 100px"></td>
                         <td><img src="{{ asset('images/product/' . $product->image_5) }}" alt="" style="width: 100px"></td>
-                        {{-- <td><a href="{{ route('products.edit',$product->id) }}">edit</a></td> --}}
+                        <td><a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">edit</a></td>
                         <td><form method="post" action="{{ route('products.destroy',$product) }}">
                             @csrf
                             @method('DELETE')
                         
-                            <button type="submit">Delete</button>
+                            <button class="btn btn-danger" type="submit">Delete</button>
                         </form></td>
                     </tr>
                 @endforeach

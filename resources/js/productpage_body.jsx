@@ -1,6 +1,6 @@
 
 //react import
-import React, { useState, useEffect  } from "react";
+import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
@@ -13,24 +13,26 @@ import "../scss/product-body.scss";
 
 //create function
 function Product_body() {
-  
+
   const [data, setData] = useState();
+  const [ImgSrc, setImgSrc] = useState();
 
   const fetchData = async () => {
     try {
       const productId = window.location.pathname.split('/').pop();
-      const response = await axios.post('/api/products/${product_id}');
+      console.log(productId);
+      const response = await axios.post(`/api/products/${productId}`);
       setData(response.data);
+      
+      setImgSrc('/images/product/'+response.data.image_1);
     } catch (error) {
       console.error(error); // Handle any errors
     }
   };
   useEffect(() => {
     fetchData(); // Fetch the category data when the component mounts
+    
   }, []);
-
-  // const { name } = useParams();
-  // const [imgSrc, setImgSrc] = useState(productArray[0]);
 
   const MakeView = () => {
     const target = event.target;
@@ -44,44 +46,59 @@ function Product_body() {
     setImgSrc(src);
   };
 
-  return(
+  return (
     <>
-    <div className="product-wrapper">
-      <div className="product-wrapper__left">
-        {data && data.map(product => (
+      <div className="product-wrapper">
+        <div className="product-wrapper__left">
           <>
-            <div className="product-main-view">
-              <img src={product.image_1} alt={product.name} />
-            </div>
-            <div className="product-other-views">
-              <img src={product.image_1} alt={product.name} onClick={MakeView} />
-              <img src={product.image_2} alt={product.name} onClick={MakeView} />
-              <img src={product.image_3} alt={product.name} onClick={MakeView} />
-              <img src={product.image_4} alt={product.name} onClick={MakeView} />
-              <img src={product.image_5} alt={product.name} onClick={MakeView} />
-            </div>
+            {data && (
+              <div className="product-main-view">
+                <img src={ImgSrc} alt={data.name} />
+              </div>
+            )}
+            {data && (
+              <div className="product-other-views">
+                <img src={`/images/product/${data.image_1}`} alt={data.name} onClick={MakeView} />
+                {data.image_2 && (
+                  <img src={`/images/product/${data.image_2}`} alt={data.name} onClick={MakeView} />
+                )}
+                {data.image_3 && (
+                  <img src={`/images/product/${data.image_3}`} alt={data.name} onClick={MakeView} />
+                )}
+                {data.image_4 && (
+                  <img src={`/images/product/${data.image_4}`} alt={data.name} onClick={MakeView} />
+                )}
+                {data.image_5 && (
+                  <img src={`/images/product/${data.image_5}`} alt={data.name} onClick={MakeView} />
+                )}
+
+
+              </div>
+            )}
           </>
-        ))}
-      </div>
-      <div className="product-wrapper__right">
-        {data && data.map(product => (
+        </div>
+        <div className="product-wrapper__right">
           <>
             <div className="title-bar">
-              {product.name}
+              {/* {data} */}
             </div>
-            <div className="price-bar">
-              {product.price}
-            </div>
-            <div className="description-bar">
-              {product.description}
-            </div>
+            {data && (
+              <div className="price-bar">
+                Price: ${data.price}
+              </div>
+            )}
+
+            {data && (
+              <div className="description-bar">
+                {data.description}
+              </div>
+            )}
             <div className="cart-button">
               in winkelwagen
             </div>
           </>
-        ))}
-      </div>
-    </div>
+        </div>
+      </div >
     </>
   );
 }

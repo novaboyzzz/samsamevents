@@ -18,12 +18,12 @@
                     <tr>
                         <td style="width:100px"> {{ $category->name }}</td>
                          <td><img src="{{ asset('images/category/' . $category->img) }}" alt="" style="width: 100px"></td>
-                        <td><a href="{{ route('categories.edit',$category->id) }}">edit</a></td>
+                        <td><a class="btn btn-primary" href="{{ route('categories.edit',$category->id) }}">edit</a></td>
                         <td><form method="post" action="{{ route('categories.destroy',$category) }}">
                             @csrf
                             @method('DELETE')
                         
-                            <button type="submit">Delete</button>
+                            <button class="btn btn-danger" type="submit">Delete</button>
                         </form></td>
                     </tr>
                 @endforeach

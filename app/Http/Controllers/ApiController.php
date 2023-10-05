@@ -21,10 +21,10 @@ class ApiController extends Controller
         return response()->json($data);
     }
 
-    public function product(int $id)
-    {
-        $data =  Product::all();
-        
+    public function product(int $productId)
+    {   
+        $data =  Product::where('id',$productId)->first();
+        // Log::info('Retrieved product data:', ['data' => $data]); 
         return response()->json($data);
     }
 }

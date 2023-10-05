@@ -23,4 +23,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::post('/categories', [ApiController::class, 'Category']);
 Route::post('/products', [ApiController::class, 'allProduct']);
-Route::post('/products/{id}', [ApiController::class, 'product']);
+Route::post('/products/{productId}', [ApiController::class, 'product']);
