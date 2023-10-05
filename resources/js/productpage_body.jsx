@@ -20,7 +20,6 @@ function Product_body() {
   const fetchData = async () => {
     try {
       const productId = window.location.pathname.split('/').pop();
-      console.log(productId);
       const response = await axios.post(`/api/products/${productId}`);
       setData(response.data);
       
@@ -45,7 +44,6 @@ function Product_body() {
     const src = target.src;
     setImgSrc(src);
   };
-
   return (
     <>
       <div className="product-wrapper">
