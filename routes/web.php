@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\admin\AdminAuthcontroller;
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\ImageController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\DashboardConrtoller;
 use Illuminate\Support\Facades\Route;
@@ -27,7 +29,18 @@ Route::get('/product/{name}', function () {
 Route::get('/category', function () {
     return view('category');
 });
-route::get('/admin', [DashboardConrtoller::class, 'index']);
-route::resource('/admin/categories', CategoryController::class);
-route::resource('/admin/products', ProductController::class);
+
+Route::name('admin.')->prefix('admin')->group(function () {
+    Route::group(['middleware' => ['auth:admin']], function () {
+    route::get('/', [DashboardConrtoller::class, 'index'])->name("dashboard");
+    route::resource('/categories', CategoryController::class);
+    route::resource('/products', ProductController::class);
+    route::resource('/images', ImageController::class);
+
+    });
+    
+});
+Route::get('/login', [AdminAuthcontroller::class,'index'])->name('login');
+Route::post('/login', [AdminAuthcontroller::class,'authenticate'])->name('authenticate');
+Route::get('/logout', [AdminAuthcontroller::class,'logout'])->name('logout');
 route::view('/', "welcome");
