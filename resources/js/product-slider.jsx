@@ -8,9 +8,12 @@ import "../scss/product-slider.scss";
 import Arrow from '../js/regular-arrow';
 
 
-
 //create function
 function Product_slider() {
+  const [slideOffset, setSlideOffset] = useState(0);
+  const sliderRef = useRef(null);
+  const sliderBlock = useRef(null);
+  let marginLeft;
   
   const [data, setData] = useState();
 
@@ -31,12 +34,23 @@ function Product_slider() {
   const productArray = data ? data.length : 0;
   const handleScroll = useRef(null);
 
-  useEffect(() => {
-    const div = handleScroll.current;
-    const slideAmount = 32;
-    div.style.transform = `translateX(${index * slideAmount}%)`;
-  }, [index]);
-
+  const handleSlide = (direction, event) => {
+    const slider = sliderBlock.current;
+    const sliderWidth = slider.offsetWidth;
+    const numVisibleSlides = 1;
+    const slideWidth = sliderWidth / numVisibleSlides;
+    const maxOffset = (products.length - numVisibleSlides) * slideWidth + (marginLeft * (products.length - numVisibleSlides));
+    
+    if (direction === "left") {
+      setSlideOffset((prevOffset) =>
+        Math.max(0, prevOffset - slideWidth - marginLeft)
+      );
+    }else if(direction === "right") {
+      setSlideOffset((prevOffset) =>
+        Math.min(maxOffset, prevOffset + slideWidth + marginLeft)
+      );
+    }else if(direction === "scroll"){
+      const scrollDirection = event.deltaX < 0 ? "left" : "right";
   const handleIncrement = () => {
     if(index >= -productArray + 2){ 
       setIndex((prevIndex) => prevIndex - 1);
@@ -60,14 +74,16 @@ function Product_slider() {
       handleDecrement();
     }
   };
-
-  const handleScrollRight = () => {
-    const now = Date.now();
-    if (now - lastScrollTime > 500) {
-      setLastScrollTime(now);
-      handleIncrement();
-    }
-  };
+  
+  useEffect(() => {
+    const element = sliderBlock.current;
+    const computedStyle = window.getComputedStyle(element);
+    marginLeft = computedStyle.getPropertyValue("margin-left");
+    marginLeft = parseFloat(marginLeft)
+    const slider = sliderRef.current;
+    slider.style.transition = "transform .8s";
+    slider.style.transform = `translateX(-${slideOffset}px)`;
+  }, [slideOffset]);
 
   return(
     <>
@@ -75,19 +91,29 @@ function Product_slider() {
       <div className="product-slider__title-bar">
         <h2>populaire producten</h2>
         <div className="arrow-holder">
-        <button className="arrow-holder__left" onClick={handleDecrement}>
-          <Arrow color='black'/>
-        </button>
-        <button className="arrow-holder__right" onClick={handleIncrement}>
-          <Arrow color='black'/>
-        </button>
+            <button
+              className="arrow-holder__left"
+              onClick={() => handleSlide("left")}
+            >
+              <Arrow color="black" />
+            </button>
+            <button
+              className="arrow-holder__right"
+              onClick={() => handleSlide("right")}
+            >
+              <Arrow color="black" />
+            </button>
         </div>
       </div>
-      <div className="slider-wrapper" onWheel={(event) => event.deltaX > 0 ? handleScrollRight() : handleScrollLeft()}>
-        <div className="slider-wrapper__inner" ref={handleScroll}>
-        {data && data.map(product => (
-            <div className="slider-block" key={product.id}>
-            <a href={`/product/${product.id}`}>
+      <div 
+        className="slider-wrapper" 
+        ref={sliderRef}
+        onWheel={(e) => handleSlide("scroll", e)}
+      >
+        <div className="slider-wrapper__inner">
+          {products.map((product) => (
+            <div className="slider-block" key={product} ref={sliderBlock}>
+            <a href={`/product/${encodeURIComponent(product[0])}`}>
               <div className="slider-block__image">
                 <img src={`/images/product/${product.image_1}`} alt={product.id}/>           
               </div>

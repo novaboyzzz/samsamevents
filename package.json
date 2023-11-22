@@ -36,6 +36,7 @@
   },
   "homepage": "https://github.com/novaboyzzz/samsamevents#readme",
   "dependencies": {
+    "react-icons": "^4.9.0",
     "react-router": "^6.9.0",
     "react-router-dom": "^6.9.0",
     "react-slick": "^0.29.0",

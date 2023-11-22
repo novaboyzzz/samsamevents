@@ -8,10 +8,9 @@ import "../scss/Category.scss";
 //component import
 import Arrow from "../js/regular-arrow";
 
-//create arrays
-
 //create function
 function Category() {
+  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
   const [data, setData] = useState();
 
   const fetchData = async () => {
@@ -25,14 +24,24 @@ function Category() {
   useEffect(() => {
     fetchData(); // Fetch the category data when the component mounts
   }, []);
+  useEffect(() => {
+    const handleResize = () => {
+      const mq = window.matchMedia('(min-width: 768px)');
+      setViewportWidth(mq.matches ? window.innerWidth : 0);
+    };
 
-  return (
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
     <>
       <div className="category-wrapper">
         <div className="title-wrapper">
           <h1 className="title">
             <span className="title__left">
-              kies een category
+              kies je categorie:
             </span>
             <a href="/category">
               <span className="title__right">
@@ -51,8 +60,9 @@ function Category() {
               <div className="block__title">
                 <h3>{category.name}</h3>
               </div>
-            </div>
-          ))}
+            </div>`
+            ))
+          }
         </div>
       </div>
     </>
