@@ -36,6 +36,7 @@ function Category() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+  return(
     <>
       <div className="category-wrapper">
         <div className="title-wrapper">
@@ -60,7 +61,7 @@ function Category() {
               <div className="block__title">
                 <h3>{category.name}</h3>
               </div>
-            </div>`
+            </div>
             ))
           }
         </div>
