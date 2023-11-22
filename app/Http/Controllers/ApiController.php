@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Image;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -25,6 +26,16 @@ class ApiController extends Controller
     {   
         $data =  Product::where('id',$productId)->first();
         // Log::info('Retrieved product data:', ['data' => $data]); 
+        return response()->json($data);
+    }
+    public function bannerImages()
+    {   
+        $data =  Image::where('name','banner')->get();
+        return response()->json($data);
+    }
+    public function aboutUsImages()
+    {   
+        $data =  Image::where('name','aboutus')->get();
         return response()->json($data);
     }
 }
