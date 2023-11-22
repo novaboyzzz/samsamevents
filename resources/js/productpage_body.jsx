@@ -91,9 +91,7 @@ function Product_body() {
                 {data.description}
               </div>
             )}
-            <div className="cart-button">
-              in winkelwagen
-            </div>
+            
           </>
         </div>
       </div >
