@@ -113,8 +113,8 @@ function Product_slider() {
         >
           <div className="slider-wrapper__inner">
             {data && data.map((product, idx) => (
-              <div className="slider-block" key={idx} ref={sliderBlock}>
-                <a href={`/product/${encodeURIComponent(product[0])}`}>
+              <div className="slider-block" key={product} ref={sliderBlock}>
+                <a href={`/product/${encodeURIComponent(product.id)}`}>
                   <div className="slider-block__image">
                     <img src={`/images/product/${product.image_1}`} alt={product.id} />
                   </div>
@@ -125,9 +125,7 @@ function Product_slider() {
                 <div className="slider-block__price">
                   {product.price}
                 </div>
-                <div className="slider-block__cart-button">
-                  In winkelwagen
-                </div>
+                
               </div>
             ))}
           </div>
