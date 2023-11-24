@@ -1,8 +1,9 @@
 @import 'Schemes';
 
 
-.full-page-menu{
-    box-shadow: inset 0em 0em 2em $blue-color-dark;;
+.full-page-menu {
+    box-shadow: inset 0em 0em 2em $blue-color-dark;
+    ;
     z-index: 999;
     position: fixed;
     width: 100%;
@@ -10,12 +11,14 @@
     background-color: $blue-color-main;
     transition: 1s;
     overflow: hidden;
-    .close-menu{
+
+    .close-menu {
         cursor: pointer;
         color: $blue-color-dark;
         width: 10vw;
         height: 10vw;
-        &::after{
+
+        &::after {
             font-weight: bold;
             position: absolute;
             top: 0;
@@ -27,21 +30,25 @@
             color: $blue-color-dark;
         }
     }
-    .list{
+
+    .list {
         top: 0;
         height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        &__item{
+
+        &__item {
             //shaping and positioning
             //layout
             //text
             font-size: 10vw;
-            h3{
+
+            h3 {
                 margin: 0;
-                a{
+
+                a {
                     //shaping and positioning
                     //layout
                     //text
@@ -51,7 +58,7 @@
                 }
             }
 
-            .nav-bar-arrow{
+            .nav-bar-arrow {
                 //shaping and positioning
                 transform: rotateX(0deg);
 
@@ -61,24 +68,25 @@
                 //text
             }
 
-            .drop-down{
+            .drop-down {
                 //shaping and positioning
                 transform: translateY(60%);
                 position: absolute;
                 padding: 0 3rem 0 1rem;
-                
+
                 //layout
                 background-color: $blue-color-main;
                 display: none;
+                ;
 
                 //text
-                &__item{
-                    a{
+                &__item {
+                    a {
                         //shaping and positioning
-        
+                        
                         //layout
                         color: $blue-color-dark;
-        
+
                         //text
                         text-decoration: none;
                     }
@@ -87,7 +95,8 @@
             }
         }
     }
-    a{
+
+    a {
         //shaping and positioning
         position: relative;
         margin: 0 auto;
@@ -96,20 +105,20 @@
         //layout
 
         //text
-        .logo{
+        .logo {
             //shaping and positioning
             position: relative;
             margin: 0 auto;
             height: 5rem;
-    
+
             //layout
-    
+
             //text
         }
     }
 }
 
-.nav-bar{
+.nav-bar {
     //shaping and positioning
     position: fixed;
     padding: 1rem 2rem;
@@ -118,7 +127,7 @@
     z-index: 4;
     right: 0;
     left: 0;
-    
+
     //layout
     box-shadow: rgba(0, 0, 0, 0.25) 0 0 2px 2px;
     background-color: $blue-color-main;
@@ -126,13 +135,15 @@
 
     //text
     font-family: $basic-font;
-    &--phone{
-        .hamburger-menu{
+
+    &--phone {
+        .hamburger-menu {
             width: 10vw;
             position: relative;
             z-index: 1100;
             cursor: pointer;
         }
+
         .hamburger-menu div {
             * {
                 border-radius: 4px;
@@ -142,218 +153,224 @@
                 background-color: $blue-color-dark;
                 transition: transform 0.3s ease;
             }
-          
+
             &:first-child {
                 top: 20%;
             }
-          
+
             &:nth-child(2) {
                 transform: translateY(-50%);
                 top: 50%;
             }
-            
+
             &:nth-child(3) {
                 bottom: 20%;
             }
-          }          
-        a{
+        }
+
+        a {
             //shaping and positioning
             position: relative;
             margin: 0 auto;
             height: 5rem;
-    
+
             //layout
-    
+
             //text
-            .logo{
+            .logo {
                 //shaping and positioning
                 position: relative;
                 margin: 0 auto;
                 height: 5rem;
-        
+
                 //layout
-        
+
                 //text
             }
         }
     }
-    &--desktop{
-        .item-list{
+
+    &--desktop {
+        .item-list {
             //shaping and positioning
             position: absolute;
             list-style: none;
             height: 5rem;
             margin: 0;
             top: 50%;
-    
+
             //layout
             color: $blue-color-dark;
-    
+
             //text
-    
-            &__item{
+
+            &__item {
                 //shaping and positioning
                 transform: translate(0, -50%);
                 align-items: center;
                 display: flex;
                 float: left;
-    
+
                 //layout
-    
+
                 //text
                 font-size: 1.2vw;
-                &:first-child{
+
+                &:first-child {
                     margin: 0;
                 }
-                &:nth-child(2){
+
+                &:nth-child(2) {
                     margin-left: 7vw;
                 }
-                &:nth-child(3){
+
+                &:nth-child(3) {
                     margin-left: 7vw;
                 }
-                
-                h3{
+
+                h3 {
                     //shaping and positioning
-                    
+
                     //layout
-                    
+
                     //text
                     transform: translateY(-10%);
                 }
-                
-                a{
+
+                a {
                     //shaping and positioning
-                    
+
                     //layout
                     color: $blue-color-dark;
-                    
+
                     //text
                     text-decoration: none;
                 }
-    
-                .nav-bar-arrow{
+
+                .nav-bar-arrow {
                     //shaping and positioning
                     transform: rotateX(0deg);
-    
+
                     //layout
                     transition: .5s;
-    
+
                     //text
                 }
-    
-                .drop-down{
+
+                .drop-down {
                     //shaping and positioning
                     transform: translateY(60%);
                     position: absolute;
                     padding: 0 3rem 0 1rem;
-                    
+                    width: 100px;
                     //layout
                     background-color: $blue-color-main;
                     display: none;
-    
+
                     //text
-                    &__item{
-                        a{
+                    &__item {
+                        a {
                             //shaping and positioning
-            
+
                             //layout
                             color: $blue-color-dark;
-            
+
                             //text
                             text-decoration: none;
                         }
                     }
-    
-                    &__item::after{
+
+                    &__item::after {
                         //shaping and positioning
                         position: absolute;
                         height: .2vw;
                         transform: translateY(-500%);
                         width: 0%;
-    
+
                         //layout
                         background-color: $blue-color-dark;
                         transition: .5s;
-    
+
                         //text
                         content: '';
                     }
-                    
-                    &__item:hover::after{
+
+                    &__item:hover::after {
                         //shaping and positioning
                         width: 3vw;
-    
+
                         //layout
                         transition: .5s;
-                        
+
                         //text
                     }
                 }
             }
-            
-            &__item:hover{
-                .nav-bar-arrow{
+
+            &__item:hover {
+                .nav-bar-arrow {
                     //shaping and positioning
                     transform: rotateX(540deg);
                     transition: .5s;
-    
+
                     //layout
-    
+
                     //text
                 }
-    
-                .drop-down{
+
+                .drop-down {
                     //shaping and positioning
-                    
+
                     //layout
                     display: block;
-    
+
                     //text
                 }
             }
-    
-            &__item::after{
+
+            &__item::after {
                 //shaping and positioning
                 position: absolute;
                 height: .2vw;
-                bottom: 1vw; 
+                bottom: 1vw;
                 width: 0%;
-    
+
                 //layout
                 background-color: $blue-color-dark;
                 transition: .5s;
-    
+
                 //text
                 content: '';
             }
-            
-            &__item:hover::after{
+
+            &__item:hover::after {
                 //shaping and positioning
                 width: 3vw;
-    
+
                 //layout
                 transition: .5s;
-                
+
                 //text
             }
         }
-        a{
+
+        a {
             //shaping and positioning
             position: relative;
             margin: 0 auto;
             height: 5rem;
-    
+
             //layout
-    
+
             //text
-            .logo{
+            .logo {
                 //shaping and positioning
                 position: relative;
                 margin: 0 auto;
                 height: 5rem;
-        
+
                 //layout
-        
+
                 //text
             }
         }
