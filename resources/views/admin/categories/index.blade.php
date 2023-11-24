@@ -3,7 +3,7 @@
 
     <div>
         <h1>index</h1>
-        <a href="{{ route('categories.create') }}" class="btn btn-success">create</a>
+        <a href="{{ route('admin.categories.create') }}" class="btn btn-success">create</a>
     </div>
     <div>
         <table>
@@ -18,8 +18,8 @@
                     <tr>
                         <td style="width:100px"> {{ $category->name }}</td>
                          <td><img src="{{ asset('images/category/' . $category->img) }}" alt="" style="width: 100px"></td>
-                        <td><a class="btn btn-primary" href="{{ route('categories.edit',$category->id) }}">edit</a></td>
-                        <td><form method="post" action="{{ route('categories.destroy',$category) }}">
+                        <td><a class="btn btn-primary" href="{{ route('admin.categories.edit',$category->id) }}">edit</a></td>
+                        <td><form method="post" action="{{ route('admin.categories.destroy',$category) }}">
                             @csrf
                             @method('DELETE')
                         
