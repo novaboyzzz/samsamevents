@@ -2,6 +2,27 @@
 
 .category-body{
   padding: calc(2.5rem + 9.3rem) 2.5rem 0 2.5rem;
+  &__title{
+    h3{
+      //shaping and positioning
+      //layout
+      //text
+      font-family: $basic-font;
+      font-size: 1.2rem;
+      @media (min-width: $medium-screen) {
+        //shaping and positioning
+        //layout
+        //text
+        font-size: 1.2rem;
+      }
+      @media (min-width: $large-screen) {
+        //shaping and positioning
+        //layout
+        //text
+        font-size: 1.5rem;
+      }
+    }
+  }
   &__main{
     //shaping and positioning
     grid-template-columns: 47.5% 47.5%;

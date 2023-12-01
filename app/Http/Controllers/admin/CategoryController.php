@@ -49,7 +49,7 @@ class CategoryController extends Controller
             $category->img = $filename;
         }
         $category->save();
-        return redirect()->route('categories.index');
+        return redirect()->route('admin.categories.index');
     }
 
     /**
@@ -95,7 +95,7 @@ class CategoryController extends Controller
             $category->img = $filename;
         }
         $category->save();
-        return redirect()->route('categories.index');
+        return redirect()->route('admin.categories.index');
     }
 
     /**
@@ -107,7 +107,7 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-        return redirect()->route('categories.index');
+        return redirect()->route('admin.categories.index');
     }
 
     
