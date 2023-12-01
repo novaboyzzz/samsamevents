@@ -1,6 +1,6 @@
 // React import
 import React, { useRef, useEffect, useState } from 'react';
-
+import axios from 'axios';
 // SCSS import
 import '../scss/Nav_bar.scss';
 
@@ -9,15 +9,24 @@ import myImage from '../../public/images/logo.png';
 import NavBarArrow from './nav_bar-arrow';
 
 // Create arrays
-const CategoryNames = [
-  'challenge kussens',
-  'spring kussens',
-  'stormbaan',
-];
+
 
 // Create function
 function Nav_bar() {
   // Change with scroll
+  const [data, setData] = useState();
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.post('/api/categories');
+      setData(response.data);
+    } catch (error) {
+      console.error(error); // Handle any errors
+    }
+  };
+  useEffect(() => {
+    fetchData(); // Fetch the category data when the component mounts
+  }, []);
   const myRef = useRef();
   useEffect(() => {
     const handleScroll = () => {
@@ -56,7 +65,7 @@ function Nav_bar() {
   const openMenu = () => {
     fullPageMenu.current.style.height = "100%";
   }
-  
+
   const closeMenu = () => {
     fullPageMenu.current.style.height = "0";
   }
@@ -67,11 +76,11 @@ function Nav_bar() {
       <>
         <header ref={myRef} className="nav-bar nav-bar--phone">
           <div className="hamburger-menu" onClick={openMenu}>
-              <div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-              </div>
+            <div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
           </div>
           <a href="/">
             <img src={myImage} alt="samsamevents" className="logo" />
@@ -79,13 +88,13 @@ function Nav_bar() {
         </header>
         <div className='full-page-menu' ref={fullPageMenu}>
           <div className='list'>
-                {CategoryNames.map((name) => (
-                  <div className="list__item" key={name}>
-                    <h3>
-                      <a href="">{name}</a>
-                    </h3>
-                  </div>
-                ))}
+            {data && data.map((category) => (
+              <div className="list__item" key={name}>
+                <h3>
+                  <a href="">{category.name}</a>
+                </h3>
+              </div>
+            ))}
           </div>
           <div className='close-menu' onClick={closeMenu}></div>
         </div>
@@ -103,10 +112,10 @@ function Nav_bar() {
                 <NavBarArrow />
               </div>
               <div className="drop-down">
-                {CategoryNames.map((name) => (
-                  <div className="drop-down__item" key={name}>
+                {data && data.map((category) => (
+                  <div className="drop-down__item" key={category.name}>
                     <h3>
-                      <a href="">{name}</a>
+                      <a href={`/category/${encodeURIComponent(category.id)}`}>{category.name}</a>
                     </h3>
                   </div>
                 ))}
