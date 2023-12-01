@@ -55,9 +55,11 @@ function Category() {
         <div className="category-wrapper__block-grid">
           {data && data.map(category => (
             <div className="block" key={category.id}>
-              <div className="block__image">
-                <img src={`/images/category/${category.img}`} alt={category.name}/>
-              </div>
+                <a href={`/category/${category.id}`}>
+                  <div className="block__image">
+                    <img src={`/images/category/${category.img}`} alt={category.name}/>
+                  </div>
+                </a>
               <div className="block__title">
                 <h3>{category.name}</h3>
               </div>

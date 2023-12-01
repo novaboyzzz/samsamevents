@@ -4,7 +4,7 @@
         <h1>index</h1>
     </div>
     <div>
-        <form action="{{ route('images.update', $image) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.images.update', $image) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="mb-3">

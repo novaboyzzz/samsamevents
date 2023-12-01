@@ -9,6 +9,7 @@ import {
 import Homepage from './homepage';
 import Productpage from './productpage';
 import Categorypage from './categorypage';
+import Categoryidpage from './categoryidpage';
 
 const router = createBrowserRouter([
     {    
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
     },
     {    
     path: "/category/:id", 
-    element: <Categorypage />,
+    element: <Categoryidpage />,
     },
     // {    
     // path: "/admin", 

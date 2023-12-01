@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::table('images', function (Blueprint $table) {
             $table->longText('name')->after('id');
             $table->dropColumn('isCover');
-            $table->dropForeign('product_id');
-            $table->dropColumn('product_id');
+            // $table->dropForeign('product_id');
+            // $table->dropColumn('product_id');
         });
     }
 

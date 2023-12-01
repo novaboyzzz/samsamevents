@@ -48,7 +48,7 @@ class ImageController extends Controller
             $image->image_url = $filename;
         }
         $image->save();
-        return redirect()->route('images.index');
+        return redirect()->route('admin.images.index');
     }
 
     /**
@@ -91,7 +91,7 @@ class ImageController extends Controller
             $image->image_url = $filename;
         }
         $image->save();
-        return redirect()->route('images.edit',$image);
+        return redirect()->route('admin.images.edit',$image);
     }
 
     /**
@@ -103,6 +103,6 @@ class ImageController extends Controller
     public function destroy(Image $image)
     {
         $image->delete();
-        return redirect()->route('images.index');
+        return redirect()->route('admin.images.index');
     }
 }

@@ -30,6 +30,10 @@ Route::get('/category', function () {
     return view('category');
 });
 
+Route::get('/category/{id}', function () {
+    return view('category');
+});
+
 Route::name('admin.')->prefix('admin')->group(function () {
     Route::group(['middleware' => ['auth:admin']], function () {
     route::get('/', [DashboardConrtoller::class, 'index'])->name("dashboard");
