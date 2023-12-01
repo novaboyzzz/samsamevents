@@ -77,9 +77,11 @@ function Product_body() {
         </div>
         <div className="product-wrapper__right">
           <>
-            <div className="title-bar">
-              {/* {data} */}
-            </div>
+            {data && (
+              <div className="title-bar">
+                {data.name}
+              </div>
+            )}
             {data && (
               <div className="price-bar">
                 Price: ${data.price}

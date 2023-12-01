@@ -22,7 +22,7 @@ function Homepage() {
       // Simulate a delay of 2 seconds before setting isLoading to false
       setTimeout(() => {
         setIsLoading(false);
-      }, 1200);
+      }, 5000);
     }, []);
     return (
         <div>
