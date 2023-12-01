@@ -16,6 +16,8 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\Product::factory(1)->create();
 
-       $this->call([AdminSeeder::class]);
+    //    $this->call([AdminSeeder::class]);
+       $this->call([bannerSeeder::class]);
+       $this->call([aboutUsSeeder::class]);
     }
 }

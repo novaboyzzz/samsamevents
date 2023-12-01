@@ -12,6 +12,10 @@
                 <input type="text" class="form-control" id="name" name="name" value="{{ $image->name }}">
             </div>
             <div class="mb-3">
+                <label for="" class="form-label">page</label>
+                <input type="text" class="form-control" id="name" name="name" value="">
+            </div>
+            <div class="mb-3">
                 <label for="image" class="form-label">image</label>
                 <img src="{{ asset('images/' . $image->image_url) }}" alt="" width="100">
                 <input type="file" class="form-control" id="image" name="image_url">

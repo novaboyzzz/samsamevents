@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\AboutUsController;
 use App\Http\Controllers\admin\AdminAuthcontroller;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\ImageController;
@@ -39,7 +40,8 @@ Route::name('admin.')->prefix('admin')->group(function () {
     route::get('/', [DashboardConrtoller::class, 'index'])->name("dashboard");
     route::resource('/categories', CategoryController::class);
     route::resource('/products', ProductController::class);
-    route::resource('/images', ImageController::class);
+    route::resource('/banner', ImageController::class);
+    route::resource('/about-us', AboutUsController::class);
 
     });
     

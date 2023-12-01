@@ -49,7 +49,7 @@ function Storefront() {
       <Slider {...settings}>
         {images && images.map((image) => (
           <div key={image}>
-            <img src={`/images/${image.image_url}`} alt="samsamevents"/>
+            <img src={`/images/banner/${image.image_url}`} alt="samsamevents"/>
           </div>
         ))}
       </Slider>

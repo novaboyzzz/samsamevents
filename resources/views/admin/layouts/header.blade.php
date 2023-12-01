@@ -18,8 +18,12 @@
                 <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">products</span></a>
         </li>
         <li>
-            <a href="/admin/images" class="nav-link px-0 align-middle">
-                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">images</span></a>
+            <a href="/admin/banner" class="nav-link px-0 align-middle">
+                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">banner</span></a>
+        </li>
+        <li>
+            <a href="/admin/about-us" class="nav-link px-0 align-middle">
+                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">about us</span></a>
         </li>
         <li><a class="dropdown-item" href="{{ route('logout') }}">Sign out</a></li>
     </ul>

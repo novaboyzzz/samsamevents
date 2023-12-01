@@ -18,9 +18,11 @@
         </div>
         
     </div>
+    
     <footer class="row">
         @include('admin.layouts.footer')
     </footer>
+    @yield('js')
 </body>
 
 </html>
