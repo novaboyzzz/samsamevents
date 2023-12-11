@@ -16,8 +16,8 @@ class ImageController extends Controller
      */
     public function index()
     {
-        $images = Image::all();
-        return view('admin.images.index',compact('images'));
+        $images = Image::where('page','banner')->get();
+        return view('admin.banner.index',compact('images'));
     }
 
     /**
@@ -82,16 +82,16 @@ class ImageController extends Controller
      */
     public function update(Request $request, Image $image)
     {
-        $image->name = $request->name;
+        $image = Image::where('id',$request->id)->first();
         if ($request->file('image_url') !== null) {
             $file = $request->image_url;
             $filename = date('Y_m_d_His').'_'.str_replace(' ', '', $file->getClientOriginalName());
-            $file->move(public_path('/images/'), $filename);
+            $file->move(public_path('/images/banner/'), $filename);
             unset($image->image_url);
             $image->image_url = $filename;
         }
         $image->save();
-        return redirect()->route('admin.images.edit',$image);
+        return redirect()->route('admin.banner.index');
     }
 
     /**

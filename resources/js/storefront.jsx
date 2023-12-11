@@ -1,5 +1,5 @@
 //react import
-import React, { useState, useEffect,useRef  } from "react";
+import React, { useState, useEffect, useRef  } from "react";
 import axios from 'axios';
 
 //scss import
@@ -14,22 +14,10 @@ import "../scss/Storefront.scss";
 // const images = [stImage1, stImage2, stImage3, stImage4];
 
 //create function
-function Storefront() {
+function Storefront({ imageData}) {
 
-  const [images, setimages] = useState();
-
-  const fetchData = async () => {
-    try {
-      const response = await axios.post('/api/images/banner');
-      setimages(response.data);
-      console.log(response.data);
-    } catch (error) {
-      console.error(error); // Handle any errors
-    }
-  };
-  useEffect(() => {
-    fetchData(); // Fetch the category data when the component mounts
-  }, []);
+  const [images, setimages] = useState(imageData);
+  
   //slider settings
   const settings = {
     autoplaySpeed: 6000,
@@ -49,7 +37,7 @@ function Storefront() {
       <Slider {...settings}>
         {images && images.map((image) => (
           <div key={image}>
-            <img src={`/images/${image.image_url}`} alt="samsamevents"/>
+            <img src={`/images/banner/${image.image_url}`} alt="samsamevents"/>
           </div>
         ))}
       </Slider>

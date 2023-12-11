@@ -34,7 +34,7 @@ function About() {
           <div className="about-me_wrapper__inner__textholder">
           {images && images.map((image) => (
           <div key={image}>
-            <img src={`/images/${image.image_url}`} alt="samsamevents" width="100"/>
+            <img src={`/images/aboutus/${image.image_url}`} alt="samsamevents" width="100"/>
           </div>
         ))}
             <p>

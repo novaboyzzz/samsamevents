@@ -14,10 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('images', function (Blueprint $table) {
-            // $table->longText('name')->after('id');
-            // $table->dropColumn('isCover');
-            // $table->dropForeign('product_id');
-            // $table->dropColumn('product_id');
+            $table->longText('page')->nullable();
         });
     }
 

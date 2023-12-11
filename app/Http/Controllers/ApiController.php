@@ -30,12 +30,12 @@ class ApiController extends Controller
     }
     public function bannerImages()
     {   
-        $data =  Image::where('name','banner')->get();
+        $data =  Image::where('page','banner')->get();
         return response()->json($data);
     }
     public function aboutUsImages()
     {   
-        $data =  Image::where('name','aboutus')->get();
+        $data =  Image::where('name','aboutusMain')->get();
         return response()->json($data);
     }
 }

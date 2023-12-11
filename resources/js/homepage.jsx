@@ -1,7 +1,5 @@
-//react import
 import React, { useState, useEffect } from 'react';
-
-//component import
+import axios from 'axios';
 import Ann_bar from './ann-bar';
 import Nav_bar from './nav-bar';
 import Storefront from './storefront';
@@ -9,12 +7,11 @@ import Category from './category';
 import About from './about_me';
 import Product_slider from './product-slider';
 import Footer from './footer';
+import LoadingScreen from './loading';
 
 //scss import
 import "../scss/Homepage.scss";
-import LoadingScreen from './loading';
 
-//create function
 function Homepage() {
     const [isLoading, setIsLoading] = useState(true);
   
